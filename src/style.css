@@ -1,0 +1,11 @@
+.bold {
+    font-weight: bold;
+}
+.white-bg{
+    background-color: white;
+    border-radius: 30px;
+    padding: 50px;
+}
+.rounded{
+    border-radius: 30px;
+}

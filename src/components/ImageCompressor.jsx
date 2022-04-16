@@ -4,12 +4,14 @@ import imageCompression from "browser-image-compression";
 
 import Card from "react-bootstrap/Card";
 
+import './../style.css'
+
 export default class imageCompressor extends React.Component {
   constructor() {
     super();
     this.state = {
       compressedLink:
-        "http://navparivartan.in/wp-content/uploads/2018/11/placeholder.png",
+        "placeholder.png",
       originalImage: "",
       originalLink: "",
       clicked: false,
@@ -62,18 +64,19 @@ export default class imageCompressor extends React.Component {
   render() {
     return (
       <div className="m-5">
-        <div className="text-light text-center">
-          <h1>Three Simple Steps</h1>
-          <h3>1. Upload Image</h3>
-          <h3>2. Click on Compress</h3>
-          <h3>3. Download Compressed Image</h3>
+        <div className="text">
+          <h1 className="bold">Sample Image Compressor</h1>
+          <p>This app uses react and browser-image-compression to compress images on the client side.</p>
+          <h4>1. Upload Image</h4>
+          <h4>2. Click on Compress</h4>
+          <h4>3. Download Compressed Image</h4>
         </div>
 
         <div className="row mt-5">
-          <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+          <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12  white-bg">
             {this.state.uploadImage ? (
               <Card.Img
-                className="ht"
+                className="ht rounded"
                 variant="top"
                 src={this.state.originalLink}
               ></Card.Img>
@@ -81,7 +84,7 @@ export default class imageCompressor extends React.Component {
               <Card.Img
                 className="ht"
                 variant="top"
-                src="http://navparivartan.in/wp-content/uploads/2018/11/placeholder.png"
+                src="placeholder.png"
               ></Card.Img>
             )}
             <div className="d-flex justify-content-center">
@@ -93,7 +96,7 @@ export default class imageCompressor extends React.Component {
               />
             </div>
           </div>
-          <div className="col-xl-4 col-lg-4 col-md-12 mb-5 mt-5 col-sm-12 d-flex justify-content-center align-items-baseline">
+          <div className="col-xl-4 col-lg-4 col-md-12 mb-5 mt-5 col-sm-12 d-flex justify-content-center align-items-baseline ">
             <br />
             {this.state.outputFileName ? (
               <button
@@ -108,8 +111,8 @@ export default class imageCompressor extends React.Component {
             )}
           </div>
 
-          <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12 mt-3">
-            <Card.Img variant="top" src={this.state.compressedLink}></Card.Img>
+          <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12 mt-3  white-bg">
+            <Card.Img className="rounded" variant="top" src={this.state.compressedLink}></Card.Img>
             {this.state.clicked ? (
               <div className="d-flex justify-content-center">
                 <a
